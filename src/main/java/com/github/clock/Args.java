@@ -16,12 +16,19 @@ public class Args {
 
     @Option(name="-hh", aliases="--more-help", usage="print detail help message.")
     private boolean showMoreHelp = false;
-
+    
     @Option(name="-v", aliases="--version", usage="show version and quit.")
     private boolean showVersion = false;
 
     @Option(name="-d", aliases="--debug", usage="debug mode.")
     private boolean debugMode = false;
+    
+    @Option(name="-lc", aliases="--long-hand-color", usage="長針の色を指定する。")
+    private String longHandColor = "#ff0000";
+
+    public String getLongHandColor(){
+        return longHandColor;
+    }
 
     public boolean isRunningMode(){
         return !isShowVersion() && !isShowHelp();

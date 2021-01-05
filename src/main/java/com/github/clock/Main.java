@@ -11,12 +11,12 @@ public class Main{
 
         if(args.isRunningMode()){
             Clock clock = new Clock(args.getTimeZone());
-            ClockViewer viewer = new ClockViewer(clock);
+            ClockViewer viewer = new ClockViewer(clock,args);
             viewer.setDebugMode(args.isDebugMode());
             viewer.showClock();
         }
     }
-
+    
     private Args parseOptions(String[] arguments) throws CmdLineException{
         Args args = new Args();
         CmdLineParser parser = new CmdLineParser(args);
